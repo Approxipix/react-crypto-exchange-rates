@@ -1,0 +1,68 @@
+@import "./variables.scss";
+
+@mixin inline-block($valign: top) {
+	display: inline-block;
+	vertical-align: $valign;
+}
+
+@mixin flex() {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+@mixin box-shadow($params) {
+	-webkit-box-shadow : $params;
+			-moz-box-shadow: $params;
+			 -ms-box-shadow: $params;
+				-o-box-shadow: $params;
+					 box-shadow: $params;
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	   -moz-border-radius: $radius;
+	    -ms-border-radius: $radius;
+	     -o-border-radius: $radius;
+					border-radius: $radius;
+}
+
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+		 -moz-transition: $transition;
+			-ms-transition: $transition;
+			 -o-transition: $transition;
+					transition: $transition;
+}
+
+@function rem($px) {
+	@return $px / $mainfont-size + 0rem;
+}
+
+@mixin desktop {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media screen and (max-width: 960px) {
+		@content;
+	}
+}
+
+@mixin tablets {
+	@media screen and (max-width: 760px) {
+		@content;
+	}
+}
+
+@mixin phones {
+	@media screen and (max-width: 480px) {
+		@content;
+	}
+}
+
+

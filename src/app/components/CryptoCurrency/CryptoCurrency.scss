@@ -1,0 +1,13 @@
+@import "../../mixins.scss";
+
+.crypto__container {
+	@include flex();
+	justify-content: space-between;
+	box-sizing: border-box;
+	width: 100%;
+
+	@include tablets {
+		flex-direction: column;
+		align-items: center;
+	}
+}
