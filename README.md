@@ -1,5 +1,6 @@
 # React-Crypto-Exchange-Rates
 
+## Setup 
 ```shell
 # Clone project
 git clone https://github.com/Approxipix/react-crypto-exchange-rates.git
