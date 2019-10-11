@@ -1,12 +1,12 @@
 import React, { Component } from "react";
+import CryptoCurrencyItem from "../CryptoCurrencyItem/CryptoCurrencyItem";
 import "./CryptoCurrency.scss";
-import CryptoCurrencyItem from "../CryptoCurrencyItem/CryptoCurrencyItem.jsx";
 
 class CryptoCurrency extends Component {
   constructor(props){
     super(props);
     this.state = {
-      crypto:[
+      crypto: [
         {title: 'Ethereum', name: 'ETH'},
         {title: 'Litecoin', name: 'LTC'},
         {title: 'Bitcoin', name: 'BTC'}
@@ -15,18 +15,18 @@ class CryptoCurrency extends Component {
   }
 
   render() {
+    const { crypto } = this.state;
+    const { selectedOption } = this.props;
     return (
       <ul className="crypto__container">
-        {
-          this.state.crypto.map((item, index) => {
-            return (
-              <CryptoCurrencyItem key={index}
-                                  selectedOption={this.props.selectedOption}
-                                  title={item.title}
-                                  name={item.name}/>
-            )
-          })
-        }
+        {crypto.map((item, index) => (
+          <CryptoCurrencyItem
+            key={index}
+            name={item.name}
+            title={item.title}
+            selectedOption={selectedOption}
+          />
+        ))}
       </ul>
     );
   };

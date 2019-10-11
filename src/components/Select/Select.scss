@@ -1,11 +1,10 @@
-@import "../../mixins.scss";
-@import "../../variables.scss";
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/variables";
 
 .select_section {
 	@include flex();
 	align-items: center;
 	justify-content: space-between;
-
 	margin-bottom: rem(52px);
 	box-sizing: border-box;
 	width: 100%;
@@ -27,7 +26,6 @@
 	width: 67%;
 	font-size: rem(32px);
 	line-height: rem(60px);
-
 	@include tablets {
 		font-size: rem(24px);
 		line-height: rem(40px);
@@ -40,33 +38,25 @@
 .select_dropdown__selected {
 	position: relative;
 	@include inline-block();
-
 	width: 33%;
 	height: rem(55px);
 	padding-left: rem(13px);
-
 	line-height: rem(55px);
-
 	background-color: rgba(252, 252, 252, 0.02);
 	border: 1px solid rgb(146, 232, 254);
 	@include border-radius(5px);
-
 	cursor: pointer;
 	outline: none;
-
 	&:after {
 		content: '';
 		position: absolute;
 		top: 50%;
 		right: 13px;
-
 		display: block;
 		width: 6px;
 		height: 6px;
-
 		border-bottom: 1px solid rgb(89, 136, 151);
 		border-right: 1px solid rgb(89, 136, 151);
-
 		transform: rotate(45deg) translateY(-50%);
 		@include transition(all .2s ease-in-out);
 		transform-origin: 50% 0;
@@ -77,17 +67,13 @@
 	position: absolute;
 	top: calc(100% + 15px);
 	left: 0;
-
 	width: 100%;
 	visibility: hidden;
-
 	background-color: rgba(26, 38, 47, 1);
 	border: 1px solid rgb(146, 232, 254);
 	@include border-radius(5px);
-
 	@include transition(all .2s ease-in-out);
 	transform: translateY(-15px);
-
 	pointer-events: none;
 	opacity: 0;
 	z-index: 10;
@@ -100,7 +86,6 @@
 		pointer-events: all;
 		opacity: 1;
 	}
-
 	&:after {
 		transform: rotate(-135deg) translateY(-50%);
 	}
@@ -108,10 +93,8 @@
 
 .select_dropdown-item {
 	padding-left: rem(13px);
-
 	font-weight: lighter;
 	line-height: rem(36px);
-
 	&:first-child {
 		padding-top: rem(10px);
 		@include border-radius(5px 5px 0 0);

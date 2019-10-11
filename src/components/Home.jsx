@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Select from "./Select/Select.jsx";
-import CryptoCurrency from "./CryptoCurrency/CryptoCurrency.jsx";
-import "./App.scss";
+import CryptoCurrency from "./CryptoCurrency/CryptoCurrency";
+import Select from "./Select/Select";
+import "./Home.scss";
 
 const currency  = [
   { value: 'USD', label: 'USD' , symbol: '$'},
@@ -10,7 +10,7 @@ const currency  = [
   { value: 'GBP', label: 'GBP' , symbol: '£'}
 ];
 
-class App extends Component {
+class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -25,16 +25,19 @@ class App extends Component {
 
   render() {
     const { selectedCurrency } = this.state;
-
     return (
       <div className="wrapper">
-        <Select value={selectedCurrency.value}
-                onChange={this.handleChange}
-                currency={currency}/>
-        <CryptoCurrency selectedOption={selectedCurrency}/>
+        <Select
+          value={selectedCurrency.value}
+          onChange={this.handleChange}
+          currency={currency}
+        />
+        <CryptoCurrency
+          selectedOption={selectedCurrency}
+        />
       </div>
     );
   }
 }
 
-export default App;
+export default Home;

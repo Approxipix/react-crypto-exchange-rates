@@ -1,7 +1,7 @@
 {
-  "name": "CryptoTest",
+  "name": "react-crypto-exchange-rates",
   "version": "1.0.0",
-  "description": "Crypto Test",
+  "description": "React crypto exchange rates",
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack --mode development --config webpack.config.js"

@@ -9,7 +9,7 @@ module.exports = {
   devtool: 'source-map',
   name: "client",
   target: "web",
-  entry: "./src/client.jsx",
+  entry: "./src/App.jsx",
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.js'
@@ -56,14 +56,6 @@ module.exports = {
               outputPath: "images/"
             }
           },
-          {
-            loader: "image-webpack-loader",
-            options: {
-              mozjpeg: {
-                enabled: false
-              }
-            }
-          }
         ]
       },
     ]
@@ -71,7 +63,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(["dist"]),
     new ExtractTextPlugin("bundle.[hash:6].css"),
-
     new BrowserSyncPlugin({
       host: 'localhost',
       port: 4000,
