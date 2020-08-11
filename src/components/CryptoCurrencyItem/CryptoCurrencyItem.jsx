@@ -10,7 +10,7 @@ class CryptoCurrencyItem extends Component {
       price:{},
       percent: {},
       enablePercent: false,
-      period: ['Hour', 'Day', 'Week', 'Month']
+      period: [ 'Hour', 'Day', 'Week', 'Month' ]
     }
   }
 
@@ -48,17 +48,18 @@ class CryptoCurrencyItem extends Component {
     let Bitcoin = require("../../assets/images/content/Bitcoin.png");
     let Litecoin = require("../../assets/images/content/Litecoin.png");
     let Ethereum = require('../../assets/images/content/Ethereum.png');
+
     if (window.devicePixelRatio > 1) {
       Bitcoin = require('../../assets/images/content/Bitcoin_x2.png');
       Litecoin = require('../../assets/images/content/Litecoin_x2.png');
       Ethereum = require('../../assets/images/content/Ethereum_x2.png');
     }
 
-    if (title === "Bitcoin") {
+    if (title === 'Bitcoin') {
       return Bitcoin
-    } else if (title === "Litecoin") {
+    } else if (title === 'Litecoin') {
       return Litecoin
-    } else if (title === "Ethereum") {
+    } else if (title === 'Ethereum') {
       return Ethereum
     }
   };
@@ -67,11 +68,12 @@ class CryptoCurrencyItem extends Component {
     const { name, title, selectedOption } = this.props;
     const { price, volume, period, percent, enablePercent } = this.state;
     const extraClass = this.props.title.toLowerCase();
+
     return (
       <li className={"crypto__section " + extraClass}>
         <h2 className="crypto__title">{title}</h2>
         <div className="crypto__img-wrapper">
-          <img className="crypto__img" src={this.getImage()} alt={title}/>
+          <img className="crypto__img" src={this.getImage()} alt={title} />
         </div>
         <div className="crypto__info">
           <div className="crypto__info-price">
@@ -104,10 +106,7 @@ class CryptoCurrencyItem extends Component {
                     "crypto__info-value" :
                     "crypto__info-value_negative"
                   }>
-                    {enablePercent
-                      ? `${percent[value]}%`
-                      : `${price[value]} ${selectedOption.symbol}`
-                    }
+                    {enablePercent ? `${percent[value]}%` : `${price[value]} ${selectedOption.symbol}`}
                   </span>
                 </li>
               )

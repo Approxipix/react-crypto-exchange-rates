@@ -7,9 +7,9 @@ class CryptoCurrency extends Component {
     super(props);
     this.state = {
       crypto: [
-        {title: 'Ethereum', name: 'ETH'},
-        {title: 'Litecoin', name: 'LTC'},
-        {title: 'Bitcoin', name: 'BTC'}
+        { title: 'Ethereum', name: 'ETH' },
+        { title: 'Litecoin', name: 'LTC' },
+        { title: 'Bitcoin', name: 'BTC' }
       ]
     }
   }
@@ -17,6 +17,7 @@ class CryptoCurrency extends Component {
   render() {
     const { crypto } = this.state;
     const { selectedOption } = this.props;
+
     return (
       <ul className="crypto__container">
         {crypto.map((item, index) => (

@@ -25,6 +25,7 @@ class Home extends Component {
 
   render() {
     const { selectedCurrency } = this.state;
+
     return (
       <div className="wrapper">
         <Select
@@ -32,9 +33,7 @@ class Home extends Component {
           onChange={this.handleChange}
           currency={currency}
         />
-        <CryptoCurrency
-          selectedOption={selectedCurrency}
-        />
+        <CryptoCurrency selectedOption={selectedCurrency} />
       </div>
     );
   }
